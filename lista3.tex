@@ -11,6 +11,7 @@
 \usepackage{enumitem}
 \usepackage{multirow}
 \usepackage{bigdelim}
+\usepackage{subcaption, multicol}
 \pagestyle{fancy}
 \fancyhf{}
 \setlength{\headheight}{40pt}
@@ -23,6 +24,7 @@
         \end{tabular}
 }
 \cfoot{\thepage}
+
 \begin{document}
 
 \begin{center}
@@ -32,12 +34,12 @@
         \Large \textbf{3ra Lista de problemas y ejercicios}
 \end{center}
 
-\section*{}Esta lista de problemas y ejercicios debe entregarse en formato PDF y se sugiere que sea realizada en computadora utilizando la herramienta JFLAP para diseñar y simular los autómatas y las expresiones regulares. En la parte superior de cada hoja debe aparecer la información general del alumno (nombre completo, boleta y grupo). Además, debe incluir las instrucciones y/o enunciados de cada ejercicio, no sólo las respuestas. Finalmente, todas las respuestas de los ejercicios deben ir acompañadas del procedimiento y/o razonamiento.
+\section*{}Esta lista de problemas y ejercicios debe entregarse en formato PDF y se sugiere que sea realizada en computadora utilizando la herramienta JFLAP para diseñar y simular los autómatas y las expresiones regulares. En la parte superior de cada hoja debe aparecer la información general del alumno (nombre completo, boleta y grupo). Ademas, debe incluir las instrucciones y/o enunciados de cada ejercicio, no solo las respuestas. Finalmente, todas las respuestas de los ejercicios deben ir acompañadas del procedimiento y/o razonamiento.
 
 NOTA: Los ejercicios que debe entregar en esta tarea son los que tienen un asterisco (*). El resto son opcionales.
 
-\section*{Autómatas Finitos y Simplificación}
-En los problemas 151-155, debe hallar el diagrama de transiciones del autómata definido en cada tabla y simplificarlo eliminando los estados que no son accesibles. A continuación, encontrará las tablas para cada uno de los problemas:
+\section*{Autómatas Finitos y Simplificación}
+En los problemas 151-155, debe hallar el diagrama de transiciones del autómata definido en cada tabla y simplificarlo eliminando los estados que no son accesibles. A continuación, encontrará las tablas para cada uno de los problemas:
 
 \begin{enumerate}
 	\setcounter{enumi}{150}
@@ -121,7 +123,6 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         x_5=\{C, E, F\}\\
                         $
 		\end{minipage}
-		\hline
 		\vspace{0.5cm}
 
 		\begin{minipage}{0.45\textwidth}
@@ -143,9 +144,9 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
 			$I$ & $x_4$ & $x_5$ & \rdelim\}{2}{*}[$x_8$]\\
                         $J$ & $x_4$ & $x_5$ &\\
                         \hline
-                        $C$ & $x_2$ & $x_3$ & \rightarrow x_9\\
-                        $E$ & $x_4$ & $x_2$ & \rightarrow x_{10}\\
-                        $F$ & $x_2$ & $x_3$ & \rightarrow x_9\\
+                        $C$ & $x_2$ & $x_3$ & $\rightarrow x_9$\\
+                        $E$ & $x_4$ & $x_2$ & $\rightarrow x_{10}$\\
+                        $F$ & $x_2$ & $x_3$ & $\rightarrow x_9$\\
                         \end{tabular}
                         \end{center}
                         $\rho_3=\{x_6,x_7,x_8,x_9,x_{10}\}\\
@@ -177,7 +178,7 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         $C$ & $x_6$ & $x_7$ & \rdelim\}{2}{*}[$x_{14}$]\\
                         $F$ & $x_6$ & $x_7$ & \\
 			\hline
-			$E$ & $x_8$ & $x_6$ & \rightarrow x_{15}\\
+			$E$ & $x_8$ & $x_6$ & $\rightarrow x_{15}$\\
                         \end{tabular}
                         \end{center}
                         $\rho_4=\{x_{11},x_{12},x_{13},x_{14},x_{15}\}\\
@@ -209,7 +210,7 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         $C$ & $x_{11}$ & $x_{12}$ & \rdelim\}{2}{*}[$x_{19}$]\\
                         $F$ & $x_{11}$ & $x_{12}$ & \\
                         \hline
-                        $E$ & $x_{13}$ & $x_{11}$ & \rightarrow x_{20}\\
+                        $E$ & $x_{13}$ & $x_{11}$ & $\rightarrow x_{20}$\\
                         \end{tabular}
                         \end{center}
                         $\rho_5=\{x_{16},x_{17},x_{18},x_{19},x_{20}\}\\
@@ -275,9 +276,9 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         \begin{tabular}{c|ccc l}
                         Estado actual & 0 & 1 & 2\\
                         \hline
-                        $A$ & $x_0$ & $x_1$ & $x_0$ & \rightarrow x_2\\
-                        $B$ & $x_1$ & $x_1$ & $x_0$ & \rightarrow x_3\\
-                        $C$ & $x_0$ & $x_1$ & $x_1$ & \rightarrow x_4\\
+                        $A$ & $x_0$ & $x_1$ & $x_0$ & $\rightarrow x_2$\\
+                        $B$ & $x_1$ & $x_1$ & $x_0$ & $\rightarrow x_3$\\
+                        $C$ & $x_0$ & $x_1$ & $x_1$ & $\rightarrow x_4$\\
 			\hline
                         $D$ & $x_1$ & $x_0$ & $x_0$ & \rdelim\}{3}{*}[$x_5$]\\
                         $E$ & $x_1$ & $x_0$ & $x_0$ &\\
@@ -299,13 +300,13 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         \begin{tabular}{c|ccc l}   
                         Estado actual & 0 & 1 & 2\\
                         \hline
-                        $A$ & $x_4$ & $x_5$ & $x_3$ & \rightarrow x_6\\
-                        $B$ & $x_5$ & $x_5$ & $x_3$ & \rightarrow x_7\\
-                        $C$ & $x_2$ & $x_5$ & $x_5$ & \rightarrow x_8\\
-                        $D$ & $x_5$ & $x_3$ & $x_4$ & \rightarrow x_9\\
+                        $A$ & $x_4$ & $x_5$ & $x_3$ & $\rightarrow x_6$\\
+                        $B$ & $x_5$ & $x_5$ & $x_3$ & $\rightarrow x_7$\\
+                        $C$ & $x_2$ & $x_5$ & $x_5$ & $\rightarrow x_8$\\
+                        $D$ & $x_5$ & $x_3$ & $x_4$ & $\rightarrow x_9$\\
 			\hline
                         $E$ & $x_5$ & $x_3$ & $x_2$ & \rdelim\}{2}{*}[$x_{10}$]\\
-                        $F$ & $x_5$ & $x_3$ & $x_4$ &\\
+                        $F$ & $x_5$ & $x_3$ & $x_4$\\
                 \end{tabular}
 		\end{center}
 		 $\rho_3=\{x_6, x_7, x_8, x_9, x_{10}\}$\\
@@ -324,12 +325,12 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
                         \begin{tabular}{c|ccc l}
                         Estado actual & 0 & 1 & 2\\
                         \hline
-                        $A$ & $x_8$ & $x_{10}$ & $x_7$ & \rightarrow x_{11}\\
-                        $B$ & $x_9$ & $x_{10}$ & $x_7$ & \rightarrow x_{12}\\
-                        $C$ & $x_6$ & $x_9$ & $x_{10}$ & \rightarrow x_{13}\\
-                        $D$ & $x_{10}$ & $x_7$ & $x_8$ & \rightarrow x_{14}\\
-                        $E$ & $x_{10}$ & $x_7$ & $x_6$ & \rightarrow x_{15}\\
-                        $F$ & $x_9$ & $x_7$ & $x_8$ & \rightarrow x_{16}\\
+                        $A$ & $x_8$ & $x_{10}$ & $x_7$ & $\rightarrow x_{11}$\\
+                        $B$ & $x_9$ & $x_{10}$ & $x_7$ & $\rightarrow x_{12}$\\
+                        $C$ & $x_6$ & $x_9$ & $x_{10}$ & $\rightarrow x_{13}$\\
+                        $D$ & $x_{10}$ & $x_7$ & $x_8$ & $\rightarrow x_{14}$\\
+                        $E$ & $x_{10}$ & $x_7$ & $x_6$ & $\rightarrow x_{15}$\\
+                        $F$ & $x_9$ & $x_7$ & $x_8$ & $\rightarrow x_{16}$\\
 
                 \end{tabular}
                 \end{center} 
@@ -447,10 +448,199 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
     \end{center}
 \newpage
 \begin{enumerate}
-\setcounter{enumi}{154}
-    \item*
+    \setcounter{enumi}{153}
+		\item *
+		\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\begin{center}
+			\begin{tabular}{c|ccc}
+			Estado actual & 0 & 1\\
+			\hline
+			$\rightarrow A$ & $D$ & $K$\\
+			$B$ & $H$ & $K$\\
+			$C$ & $I$ & $E$\\
+			$D$ & $C$ & $G$\\
+			$*E$ & $K$ & $I$\\
+			$F$ & $B$ & $E$\\
+            $*G$ & $C$ & $I$\\
+            $*H$ & $C$ & $B$\\
+            $I$ & $G$ & $K$\\
+            $*J$ & $F$ & $B$\\
+            $K$ & $C$ & $F$\\
+		      \end{tabular}
+		      \end{center}
+		De la tabla podemos concluir que el estado 'J' es el único estado inaccesible, por tanto lo quitamos de la tabla, resultando:
+		\end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+		      \begin{center}
+			\begin{tabular}{c|cc l}
+			Estado actual & 0 & 1\\
+			\hline
+			$\rightarrow A$ & $D$ & $K$\\
+			$B$ & $H$ & $K$\\
+			$C$ & $I$ & $E$\\
+			$D$ & $C$ & $G$\\
+			$*E$ & $K$ & $I$\\
+			$F$ & $B$ & $E$\\
+            $*G$ & $C$ & $I$\\
+            $*H$ & $C$ & $B$\\
+            $I$ & $G$ & $K$\\
+            $K$ & $C$ & $F$\\
+		      \end{tabular}
+		      \end{center}
+	\end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{imgs/ImgEma/ori154.png}
+		\caption{Diagrama de transiciones y validación en JFLAP No. 154.}
+		\end{figure}
+		$\rho_1=\{x_0, x_1\}$\\
+		$x_0=\{A,B,C,D,F,I,K\}$\\
+		$x_1=\{E,G,H\}$\\
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+		      \begin{center}
+			2da iteración\\
+			\vspace{0.5cm}
+                \begin{tabular}{c|cc l}
+    			Estado actual & 0 & 1\\
+    			\hline
+    			$A$ & $x_0$ & $x_0$ & $\rightarrow x_2$\\
+    			$B$ & $x_1$ & $x_0$ & $\rightarrow x_3$\\
+    			$C$ & $x_0$ & $x_1$ & \rdelim\}{3}{*}[$x_{4}$]\\
+    			$D$ & $x_0$ & $x_1$\\
+                $F$ & $x_0$ & $x_1$\\
+                $I$ & $x_1$ & $x_0$ & $\rightarrow x_3$\\
+                $K$ & $x_0$ & $x_0$ & $\rightarrow x_2$\\
+                \hline
+    			$E$ & $x_0$ & $x_0$ & \rdelim\}{3}{*}[$x_{5}$]\\
+                $G$ & $x_0$ & $x_0$\\
+                $H$ & $x_0$ & $x_0$\\
+    		      \end{tabular}
+            \end{center}
+		$\rho_2=\{x_2, x_3, x_4\}$\\
+        $x_2=\{A,K\}$\\
+		$x_3=\{B,I\}$\\
+		$x_4=\{C,D,F\}$\\
+        $x_5=\{E,G,H\}$\\
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+		\begin{center}
+        \vspace{0.5cm}
+		3ra iteración\\
+            \begin{tabular}{c|cc l}
+    			Estado actual & 0 & 1\\
+    			\hline
+    			$A$ & $x_4$ & $x_2$ & $\rightarrow x_6$\\
+    			$K$ & $x_4$ & $x_4$ & $\rightarrow x_7$\\
+                \hline
+    			$B$ & $x_5$ & $x_2$ & \rdelim\}{2}{*}[$x_{8}$]\\
+    			$I$ & $x_5$ & $x_2$ &\\
+                \hline
+                $C$ & $x_3$ & $x_5$ & $\rightarrow x_9$\\
+                $D$ & $x_4$ & $x_5$ & $\rightarrow x_{10}$\\
+                $F$ & $x_3$ & $x_5$ & $\rightarrow x_9$\\
+                \hline
+    			$E$ & $x_2$ & $x_3$ & $\rightarrow x_{11}$\\
+                $G$ & $x_4$ & $x_3$ & \rdelim\}{2}{*}[$x_{12}$]\\
+                $H$ & $x_4$ & $x_3$\\
+    		\end{tabular}
+		\end{center}
+	$\rho_3=\{x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12}\}$\\
+    $x_6=\{A\}$\\
+    $x_7=\{K\}$\\
+    $x_8=\{B,I\}$\\
+    $x_9=\{C,F\}$\\
+    $x_{10}=\{D\}$\\
+    $x_{11}=\{E\}$\\
+    $x_{12}=\{G,H\}$\\
+    
+		\begin{center} 
+	    4ta iteración\\
+        \vspace{0.5cm}
+        \begin{tabular}{c|cc l}
+    			Estado actual & 0 & 1\\
+    			\hline
+    			$A$ & $x_{10}$ & $x_7$ & $\rightarrow x_{13}$\\
+                \hline
+    			$K$ & $x_9$ & $x_9$ & $\rightarrow x_{14}$\\
+                \hline
+    			$B$ & $x_{12}$ & $x_7$ & \rdelim\}{2}{*}[$x_{15}$]\\
+    			$I$ & $x_{12}$ & $x_7$\\
+                \hline
+                $C$ & $x_8$ & $x_{11}$ & \rdelim\}{2}{*}[$x_{16}$]\\
+                $F$ & $x_8$ & $x_{11}$\\
+                \hline
+                $D$ & $x_9$ & $x_{12}$ & $\rightarrow x_{17}$\\
+                \hline
+    			$E$ & $x_7$ & $x_8$ & $\rightarrow x_{18}$\\
+                \hline
+                $G$ & $x_9$ & $x_8$ & \rdelim\}{2}{*}[$x_{19}$]\\
+                $H$ & $x_9$ & $x_8$\\
+    		\end{tabular}
+        \end{center} 
+    $\rho_4=\{x_{13}, x_{14}, x_{15}, x_{16}, x_{17}, x_{18}, x_{19}\}$\\
+    $x_{13}=\{A\}$\\
+    $x_{14}=\{K\}$\\
+    $x_{15}=\{B,I\}$\\
+    $x_{16}=\{C,F\}$\\
+    $x_{17}=\{D\}$\\
+    $x_{18}=\{E\}$\\
+    $x_{19}=\{G,H\}$
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+    \begin{center}
+        \textbf{5ta iteración} \\[0.5cm]
+        \begin{tabular}{c|cc l}
+            Estado actual & 0 & 1 & \\
+            \hline
+            $A$ & $x_{17}$ & $x_{14}$ & $\rightarrow x_{20}$\\
+            \hline
+            $K$ & $x_{16}$ & $x_{16}$ & $\rightarrow x_{21}$\\
+            \hline
+            $B$ & $x_{19}$ & $x_{14}$ & \rdelim\}{2}{1.5cm}[$x_{22}$] \\
+            $I$ & $x_{19}$ & $x_{14}$ & \\
+            \hline
+            $C$ & $x_{15}$ & $x_{18}$ & \rdelim\}{2}{1.5cm}[$x_{23}$] \\
+            $F$ & $x_{15}$ & $x_{18}$ & \\
+            \hline
+            $D$ & $x_{15}$ & $x_{19}$ & $\rightarrow x_{24}$\\
+            \hline
+            $E$ & $x_{14}$ & $x_{15}$ & $\rightarrow x_{25}$\\
+            \hline
+            $G$ & $x_{16}$ & $x_{15}$ & \rdelim\}{2}{1.5cm}[$x_{26}$] \\
+            $H$ & $x_{16}$ & $x_{15}$ & \\
+        \end{tabular}
+    \end{center}
+    $\rho_5=\{x_{20}, x_{21}, x_{22}, x_{23}, x_{24}, x_{25}, x_{26}\}$\\
+    $x_{20}=\{A\}$\\
+    $x_{21}=\{K\}$\\
+    $x_{22}=\{B,I\}$\\
+    $x_{23}=\{C,F\}$\\
+    $x_{24}=\{D\}$\\
+    $x_{25}=\{E\}$\\
+    $x_{26}=\{G,H\}$\\    
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{figure}[H]
+		\centering
+		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/final154.png}
+		\caption{Diagrama de transiciones simplificado y estados de validación.}
+    \end{figure}
+\end{minipage}
+\end{center}
 \end{enumerate}
 
+\begin{enumerate}
+\setcounter{enumi}{154}
+    \item*
     \begin{center}
         \begin{minipage}{0.30\textwidth}
             \begin{center}
@@ -478,12 +668,12 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.8\textwidth]{imgs/ori155.png}
-                \caption{Diagrama de transiciones y validacion en JFLAP No. 155.}
+                \caption{Diagrama de transiciones y validación en JFLAP No. 155.}
             \end{figure}
         \end{minipage}
 
         \vspace{0.5cm}
-	\hline
+	\hfill
 	\vspace{0.5cm}
         \begin{minipage}{0.45\textwidth}
             $\rho_1 =\{x_0, x_1\}$\\
@@ -575,11 +765,11 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
             \end{tabular}
             \end{center}
                 $\rho_4=\{x_{10},x_{11},x_{12},x_{13},x_{14}\}$\\
-            $x_{10}=\{A, J\}$\\
-            $x_{11}=\{B, D, H\}$\\
-            $x_{12}=\{C, G\}$\\
-	    $x_{13}=\{E, K\}$\\
-	    $x_{14}=\{F\}$\\
+                $x_{10}=\{A, J\}$\\
+                $x_{11}=\{B, D, H\}$\\
+                $x_{12}=\{C, G\}$\\
+    	          $x_{13}=\{E, K\}$\\
+        	    $x_{14}=\{F\}$\\
 
             $\rho_4 = \rho_3 \rightarrow$ Fin de la reducción.
 
@@ -590,14 +780,118 @@ En los problemas 151-155, debe hallar el diagrama de transiciones del autómata
             \begin{figure}[H]
             \centering
             \includegraphics[width=0.9\textwidth]{imgs/final155.png}
-            \caption{Diagrama de transiciones y validacion en JFLAP No. 155 simplificado.}
+            \caption{Diagrama de transiciones y validación en JFLAP No. 155 simplificado.}
             \end{figure}
         \end{minipage}
     \end{center}
-\hline
 \end{enumerate}
 \vspace{0.3cm}
-En los problemas 156-157, debe hallar la tabla de transiciones del autómata que se muestra y simplicarlo encontrando una partición, eliminando los estados que no son accesibles.
+En los problemas 156-157, debe hallar la tabla de transiciones del autómata que se muestra y simplificarlo encontrando una partición, eliminando los estados que no son accesibles.
+\begin{enumerate}
+\setcounter{enumi}{155}
+    \item*
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/ori156.png}
+    		\caption{Diagrama de transiciones y estados de validación 156.}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|cc}
+			Estado actual & 0 & 1\\
+			\hline
+			$\rightarrow A$ & $B$ & $C$\\
+			$B$ & $C$ & $E$\\
+			$C$ & $D$ & $C$\\
+			$D$ & $C$ & $E$\\
+			$*E$ & $B$ & $E$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+    \end{center}
+\end{enumerate}
+\vspace{0.5cm}
+Tanto del autómata, como de la tabla de transiciones notamos que no existen estados inaccesibles, por ende empezamos separando los estados de transición y aceptación.
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \begin{center}
+		\begin{tabular}{c|cc l}
+		Estado actual & 0 & 1\\
+		\hline
+        $\rightarrow A$ & $B$ & $C$ & \rdelim\}{4}{1.5cm}[$x_{0}$]\\
+		$B$ & $C$ & $E$\\
+		$C$ & $D$ & $C$\\
+        $D$ & $C$ & $E$\\
+		$*E$ & $B$ & $E$ & $\rightarrow x_{1}$\\
+        \end{tabular}
+        \end{center}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        1ra iteración.\\
+        $\rho_0=\{x_{0}, x_{1}\}$\\
+        $x_{0}=\{A,B,C,D\}$\\
+        $x_{1}=\{E\}$\\
+    \end{minipage}
+    \hfill\vspace{0.5cm}
+    \begin{minipage}{0.45\textwidth}
+        \begin{center}
+		\begin{tabular}{c|cc l}
+		Estado actual & 0 & 1\\
+		\hline
+        $A$ & $x_0$ & $x_0$ & $\rightarrow x_{2}$\\
+		$B$ & $x_0$ & $x_1$ & $\rightarrow x_{3}$\\
+		$C$ & $x_0$ & $x_0$ & $\rightarrow x_{2}$\\
+        $D$ & $x_0$ & $x_1$ & $\rightarrow x_{3}$\\
+        \hline
+		$E$ & $x_0$ & $x_1$ & $\rightarrow x_{4}$\\
+        \end{tabular}
+        \end{center}
+    \end{minipage}
+    \hfill\vspace{0.5cm}
+    \begin{minipage}{0.45\textwidth}
+        2da iteración.\\
+        $\rho_1=\{x_{2}, x_{3},x_4\}$\\
+        $x_{2}=\{A,C\}$\\
+        $x_{3}=\{B.D\}$\\
+        $x_{4}=\{E\}$\\
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \begin{center}
+		\begin{tabular}{c|cc l}
+		Estado actual & 0 & 1\\
+		\hline
+        $A$ & $x_3$ & $x_2$ & \rdelim\}{2}{1.5cm}[$x_{5}$]\\
+		$C$ & $x_3$ & $x_2$\\
+        \hline
+		$B$ & $x_2$ & $x_4$ & \rdelim\}{2}{1.5cm}[$x_{6}$]\\
+        $D$ & $x_2$ & $x_4$\\
+        \hline
+		$E$ & $x_3$ & $x_4$ & $\rightarrow x_{7}$\\
+        \end{tabular}
+        \end{center}
+    \end{minipage}
+    \hfill\vspace{0.5cm}
+    \begin{minipage}{0.45\textwidth}
+        3ra iteración.\\
+        $\rho_2=\{x_{5}, x_{6},x_7\}$\\
+        $x_{5}=\{A,C\}$\\
+        $x_{6}=\{B.D\}$\\
+        $x_{7}=\{E\}$\\
+    \end{minipage}
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[width=1\textwidth]{imgs/ImgEma/final156.png}
+    	\caption{Diagrama simplificado y de transiciones con estados de validación.}
+    \end{figure}
+\end{center}
+\clearpage
+\vspace{0.5cm}
 \begin{enumerate}
 \setcounter{enumi}{156}
     \item*
@@ -616,7 +910,7 @@ En los problemas 156-157, debe hallar la tabla de transiciones del autómata qu
         \begin{tabular}{c|cc}
             Estado actual & 0 & 1 \\
                 \hline
-                $\rightarrow A$ & $B$ &F$ \\
+                $\rightarrow A$ & $B$ & $F$ \\
                 $B$ & $C$ & $E$\\
                 $C$ & $D$ & $E$\\
                 $D$ & $B$ & $E$\\
@@ -645,7 +939,7 @@ En los problemas 156-157, debe hallar la tabla de transiciones del autómata qu
 		\begin{tabular}{c|cc l}
 		Estado actual & 0 & 1 &\\
 		\hline
-		$A$ & $x_0$ & $x_1$ & \rightarrow x_2\\
+		$A$ & $x_0$ & $x_1$ & $\rightarrow x_2$\\
 		\hline
 		$B$ & $x_0$ & $x_0$ & \rdelim\}{3}{*}[$x_3$]\\
 		$C$ & $x_0$ & $x_0$ &\\
@@ -669,7 +963,7 @@ En los problemas 156-157, debe hallar la tabla de transiciones del autómata qu
 		\begin{tabular}{c|cc l}
 		Estado actual & 0 & 1 &\\
 		\hline
-		$A$ & $x_3$ & $x_5$ & \rightarrow x_5\\
+		$A$ & $x_3$ & $x_5$ & $\rightarrow x_5$\\
 		\hline
 		$B$ & $x_3$ & $x_4$ & \rdelim\}{3}{*}[$x_6$]\\
 		$C$ & $x_3$ & $x_4$ &\\
@@ -698,6 +992,34 @@ En los problemas 156-157, debe hallar la tabla de transiciones del autómata qu
 \end{center}
 \section*{Autómatas Finitos No Deterministas}
 En los problemas 158-161, debe describir lo que hacen los autómatas finitos no deterministas definidos en cada tabla, donde el alfabeto es $\Sigma = \{0, 1\}$.
+
+\begin{enumerate}
+\setcounter{enumi}{157}
+    \item*
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/Doc158.png}
+    		\caption{Autómata 158.}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|cc}
+			Estado actual & 0 & 1\\
+			\hline
+			$\rightarrow q1$ & $q2$ & $\emptyset$\\
+			$q2$ & $\emptyset$ & $q3$\\
+			$*q3$ & $\emptyset$ & $\emptyset$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+    \end{center}
+\end{enumerate}
+\centering El autómata solo acepta las cadenas $01$, específicamente esto es $L=\{01\}$, aquellas cadenas que contengan otros caracteres del alfabeto son rechazadas en automático.
+
 \begin{enumerate}
 \setcounter{enumi}{158}
 \item*
@@ -731,6 +1053,34 @@ En los problemas 158-161, debe describir lo que hacen los autómatas finitos no 
         El autómata acepta todas las cadenas que inician con una cantidad indefinida de unos (incluyendo cero unos) y que finalizan estrictamente con la secuencia \textbf{01}. Al carecer de transiciones de salida en $q_3$, cualquier símbolo adicional posterior al 01 provocará el rechazo de la cadena.
 \end{minipage}
 \end{center}
+
+\begin{enumerate}
+\setcounter{enumi}{159}
+    \item*
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/Doc160.png}
+    		\caption{Autómata 160.}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|cc}
+			Estado actual & 0 & 1\\
+			\hline
+			$\rightarrow q1$ & $q2$ & $\emptyset$\\
+			$q2$ & $\emptyset$ & $q3$\\
+			$*q3$ & $q3$ & $q3$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+    \end{center}
+\end{enumerate}
+\centering Este autómata solo acepta cadenas que comienzan unicamente con "01", esto es $L=\{01(0+1)^*$
+
 \newpage
 \begin{enumerate}
 \setcounter{enumi}{160}
@@ -770,6 +1120,32 @@ En los problemas 158-161, debe describir lo que hacen los autómatas finitos no 
 	Los ejercicios 162-188 consisten en encontrar un autómata finito no determinista que haga lo que se pide en cada uno de los problemas 94-123 de la tarea 2, cuando sea posible, busque que el diagrama del AFN sea más simple que el del AFD. Como en la tarea 2, los problemas con * son obligatorios y el resto son optativos.
 
 \begin{enumerate}
+\setcounter{enumi}{161}
+    \item Las palabras de $\Sigma_1$ que comienzan con 1 y terminan con 2.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L94.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|ccc}
+			Estado actual & 0 & 1 & 2\\
+			\hline
+			$\rightarrow q0$ & $\emptyset$ & $q1$ & $\emptyset$\\
+			$q1$ & $q1$ & $q1$ & $\{q1,q2\}$\\
+			$*q2$ & $\emptyset$ & $\emptyset$ & $\emptyset$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        El autómata transita a un estado intermedio solo si el primer carácter es 1. Una vez ahí, se mantiene procesando cualquier símbolo hasta que encuentre un 2, el cual le permite alcanzar el estado de aceptación.
+    \end{center}
+\end{enumerate}
+
+\begin{enumerate}
 \setcounter{enumi}{162}
 \item* Las palabras de $\Sigma_1$ que tienen longitud 4. 
 \end{enumerate}
@@ -801,6 +1177,35 @@ En los problemas 158-161, debe describir lo que hacen los autómatas finitos no 
                         \end{figure}
 \end{minipage}
 \end{center}
+
+\begin{enumerate}
+\setcounter{enumi}{163}
+    \item Las palabras de $\Sigma_1$ con prefijo 20 y longitud 4.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L96.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|ccc}
+			Estado actual & 0 & 1 & 2\\
+			\hline
+			$\rightarrow q0$ & $\emptyset$ & $\emptyset$ & $q1$\\
+			$q1$ & $q2$ & $\emptyset$ & $\emptyset$\\
+            $q2$ & $q3$ & $q3$ & $q3$\\
+            $q3$ & $q4$ & $q4$ & $q4$\\
+			$*q4$ & $\emptyset$ & $\emptyset$ & $\emptyset$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        Se requiere una secuencia exacta de estados para los símbolos 2 y 0. Posteriormente, se consumen exactamente dos símbolos adicionales de cualquier tipo para garantizar que la longitud total de la cadena sea 4.
+    \end{center}
+\end{enumerate}
+
 \newpage
 
 \begin{enumerate}
@@ -840,11 +1245,40 @@ En los problemas 158-161, debe describir lo que hacen los autómatas finitos no 
 
 \end{minipage}
 \end{center}
-
 \vspace{0.5cm}
+
+\begin{enumerate}
+\setcounter{enumi}{165}
+    \item Las palabras de $\Sigma_1$ que terminan con la cadena 00102.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L98.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|ccc}
+			Estado actual & 0 & 1 & 2\\
+			\hline
+			$\rightarrow q0$ & $\{q0,q1\}$ & $q0$ & $q0$\\
+			$q1$ & $q2$ & $\emptyset$ & $\emptyset$\\
+            $q2$ & $\emptyset$ & $q3$ & $\emptyset$\\
+            $q3$ & $q4$ & $\emptyset$ & $\emptyset$\\
+			$q4$ & $\emptyset$ & $\emptyset$ & $q5$\\
+            $*q5$ & $\emptyset$ & $\emptyset$ & $\emptyset$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        El estado inicial posee un bucle que permite cualquier secuencia. El no determinismo ocurre cuando, al recibir un 0, el autómata decide si mantenerse en el bucle o iniciar la validación de la secuencia de cierre 00102.
+    \end{center}
+\end{enumerate}
+\newpage
 \begin{enumerate}
 \setcounter{enumi}{166}
-\item* Las palabras de $\Sigma_1$ cuya longitud es un múltiplo de 3.
+\item* Las palabras de $\Sigma_1$ cuya longitud es un múltiplo de 3.
 \end{enumerate}
 
 \begin{center}
@@ -879,6 +1313,32 @@ Esta ramificación lineal ($q_1 \rightarrow q_6$) exige los caracteres estrictos
 	\end{figure}	
 \end{minipage}
 \end{center}
+\vspace{0.5cm}
+\begin{enumerate}
+\setcounter{enumi}{167}
+    \item Las palabras de $\Sigma_2$ tales que el primer símbolo de la cadena es una letra y el segundo es un dígito.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L100.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|ccccc}
+			Estado actual & a & b & c & 0 & 1\\
+			\hline
+			$\rightarrow q0$ & $q1$ & $q1$ & $q1$ & $\emptyset$ & $\emptyset$\\
+			$q1$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $q2$ & $q2$\\
+            $*q2$ & $q2$ & $q2$ & $q2$ & $q2$ & $q2$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        Se valida que la primera transición provenga del subconjunto de letras $\{a, b, c\}$ y la segunda del subconjunto de dígitos $\{0, 1\}$. Si se cumplen estas condiciones, el autómata acepta cualquier símbolo posterior.
+    \end{center}
+\end{enumerate}
 
 \newpage
 
@@ -917,8 +1377,37 @@ Una vez que el patrón se completa con éxito, el hilo alcanza el estado de acep
 \end{figure}
 \end{minipage}
 \end{center}
-
 \vspace{0.5cm}
+\begin{enumerate}
+\setcounter{enumi}{169}
+    \item Las palabras de $\Sigma_3$ que contienen la cadena abbbab.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L102.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|cc}
+			Estado actual & a & b\\
+			\hline
+			$\rightarrow q0$ & $\{q0,q1\}$ & $q0$ \\
+			$q1$ & $\emptyset$ & $q2$\\
+            $q2$ & $\emptyset$ & $q3$\\
+            $q3$ & $\emptyset$ & $q4$\\
+            $q4$ & $q5$ & $\emptyset$\\
+            $q5$ & $\emptyset$ & $q6$\\
+            $*q6$ & $q6$ & $q6$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        Se utiliza un bucle en el estado inicial para procesar símbolos arbitrarios hasta que se identifique el inicio de la cadena $abbbab$. Una vez encontrada y validada la subcadena, se acepta cualquier sufijo posterior.
+    \end{center}
+\end{enumerate}
+\newpage
 \begin{enumerate}
 \setcounter{enumi}{170}
 \item Las palabras de $\Sigma_3$ que contienen la cadena abbbab.
@@ -956,10 +1445,37 @@ Si el patrón falla en cualquier estado intermedio, ese hilo se destruye por omi
 	\end{figure}
 \end{minipage}
 \end{center}
-
+\vspace{0.3cm}
+\begin{enumerate}
+\setcounter{enumi}{171}
+    \item Las palabras de $\Sigma_3$ que inician con la cadena abbab.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L104.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|cc}
+			Estado actual & a & b\\
+			\hline
+			$\rightarrow q0$ & $q1$ & $\emptyset$ \\
+			$q1$ & $\emptyset$ & $q2$\\
+            $q2$ & $\emptyset$ & $q3$\\
+            $q3$ & $q5$ & $\emptyset$\\
+            $q5$ & $\emptyset$ & $q4$\\
+            $*q4$ & $\emptyset$ & $q6$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        Ya que las palabras aceptadas por el AFN deben iniciar necesariamente con cadena abbab, por ende cualquier otro carácter posterior seria igualmente aceptado.
+    \end{center}
+\end{enumerate}
 
 \newpage
-
 
 \begin{enumerate}
 \setcounter{enumi}{172}
@@ -997,8 +1513,39 @@ El estado de aceptación $q_4$ carece intencionalmente de salidas; cualquier car
 	\end{figure}
 \end{minipage}
 \end{center}
-
 \vspace{0.5cm}
+
+\begin{enumerate}
+\setcounter{enumi}{173}
+    \item Las palabras de $\Sigma_1$ que incluyen la subcadena 1101001.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L106.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+			\begin{tabular}{c|ccc}
+			Estado actual & 0 & 1 & 2\\
+			\hline
+			$\rightarrow q0$ & $q0$ & $\{q0,q1\}$ & $q0$\\
+			$q1$ & $\emptyset$ & $q2$ & $\emptyset$\\
+            $q2$ & $q3$ & $\emptyset$ & $\emptyset$\\
+            $q3$ & $\emptyset$ & $q4$ & $\emptyset$\\
+			$q4$ & $q5$ & $\emptyset$ & $\emptyset$\\
+            $q5$ & $q6$ & $\emptyset$ & $\emptyset$\\
+            $q6$ & $\emptyset$ & $q7$ & $\emptyset$\\
+            $*q7$ & $q7$ & $q7$ & $q7$\\
+		      \end{tabular}
+		      \end{center}
+        \end{minipage}
+        El estado inicial y final posee un bucle que permite cualquier secuencia. El no determinismo ocurre cuando, al recibir un 1, el autómata decide si mantenerse en el bucle o iniciar la validación de la subcadena de cierre 1101001.
+    \end{center}
+\end{enumerate}
+\newpage
 \begin{enumerate}
 \setcounter{enumi}{174}
 \item Las palabras de $\Sigma_1$ que incluyen al menos una vez la subcadena 0101 y
@@ -1045,14 +1592,30 @@ El autómata emplea no determinismo en $q_0$ para procesar tres escenarios simul
 		\caption{Diagrama de transiciones y validación No. 173.}
 	\end{figure}
 \end{minipage}
-
 \end{center}
+\vspace{0.3cm}
 
+\begin{enumerate}
+\setcounter{enumi}{175}
+    \item Las palabras de $\Sigma_2$ que incluyen al menos una vez la subcadena abbcb y al menos una vez la subcadena cbaabb, asumiendo que no se pueden traslapar; así, cadenas similares a abbcbaabb no están en el lenguaje.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1\textwidth]{imgs/ImgEma/AFN2L108.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            Se presenta este AFN como solución parcial, pues se debe de ramificar el proceso, $i.e.$, una rama busca primero abbcb y luego cbaabb, mientras que la otra busca el orden inverso, cabe aclarar que la herramienta JFLAP no permite ramificar correctamente, pues se marca error en cierto momento si se llegan a repetir salidas mas de 2 veces.
+        \end{minipage}
+    \end{center}
+\end{enumerate}
 
-\vspace{0.5cm}   
+\newpage 
 \begin{enumerate}
 \setcounter{enumi}{176}
-\item Las palabras de $\Sigma_2$ que incluyen al menos una vez la subcadena abbcb y al menos una vez la subcadena cbaabb, asumiendo que sı́ se pueden traslapar.
+\item Las palabras de $\Sigma_2$ que incluyen al menos una vez la subcadena abbcb y al menos una vez la subcadena cbaabb, asumiendo que sí se pueden traslapar.
 \end{enumerate}
 
 \begin{center}   
@@ -1106,22 +1669,47 @@ La misma lógica inversa aplica al completar \textbf{cbaabb} ($q_{10} \rightarro
 		\includegraphics[width=0.9\textwidth]{imgs/177.png}
 		\caption{Diagrama de transiciones y validación No. 177.}
 	\end{figure}
-
-
 \end{minipage}
 \end{center}
+\newpage
 
-
-
-
-
-\vspace{0.5cm}
 \begin{enumerate}
-\setcounter{enumi}{178}
-\item Las palabras de Σ1 que contienen exactamente tres veces la subcadena 01002.
+\setcounter{enumi}{177}
+    \item Las palabras de $\Sigma_1$ que contienen exactamente tres veces la subcadena 01.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L110.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+            \begin{tabular}{c|ccc}
+            Estado actual & 0 & 1 & 2\\
+            \hline
+            $\rightarrow q0$ & $q1$ & $q0$ & $q0$ \\
+            $q1$ & $q1$ & $q2$ & $q0$\\
+            $q2$ & $q3$ & $q2$ & $q2$\\
+            $q3$ & $q3$ & $q4$ & $q2$\\
+            $q4$ & $q5$ & $q4$ & $q4$\\
+            $q5$ & $q5$ & $*q6$ & $q4$\\
+            $*q6$ & $q7$ & $q6$ & $q6$\\
+            $q7$ & $q7$ & $\emptyset$ & $q6$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        Se requiere un conteo estricto. Los estados pares indican cuántas veces se ha completado la subcadena, mientras que los impares son estados de espera tras recibir un 0.
+    \end{center}
 \end{enumerate}
 
-\begin{center}
+
+\vspace{0.3cm}
+\begin{enumerate}
+\setcounter{enumi}{178}
+\item Las palabras de $\Sigma_1$ que contienen exactamente tres veces la subcadena 01002.
+\end{enumerate}
 \begin{minipage}{0.45\textwidth}
 \begin{center}
     \textbf{Tabla de transiciones (AFND Contador Estricto)} \\
@@ -1165,16 +1753,43 @@ El autómata consta de cuatro bloques secuenciales que rastrean la subcadena \te
                 \includegraphics[width=0.9\textwidth]{imgs/179.png}
                 \caption{Diagrama de transiciones y validación No. 179.}
         \end{figure}
-
 \end{minipage}
-
 \end{center}
 
+\begin{enumerate}
+\setcounter{enumi}{179}
+    \item Las palabras de $\Sigma_1$ que contienen dos veces la subcadena 010, asumiendo que no se pueden traslapar; es decir, que 01010 no está en el lenguaje, mientras que 010010 sí pertenece.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L112.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+            \begin{tabular}{c|ccc}
+            Estado actual & 0 & 1 & 2\\
+            \hline
+            $\rightarrow q0$ & $\{q0, q1\}$ & $q0$ & $q0$ \\
+            $q1$ & $\emptyset$ & $q2$ & $\emptyset$\\
+            $q2$ & $q3$ & $\emptyset$ & $\emptyset$\\
+            $q3$ & $\{q3, q4\}$ & $q3$ & $q3$\\
+            $q4$ & $\emptyset$ & $q5$ & $\emptyset$\\
+            $q5$ & $*q6$ & $\emptyset$ & $\emptyset$\\
+            $*q6$ & $q6$ & $q6$ & $q6$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        Similar al ejercicio 110, pero una vez que se completa el primer 010, el sistema debe ignorar ese último 0 para evitar el traslape y empezar a buscar el segundo bloque desde cero lo cual nos obliga a usar una transición extra.
+    \end{center}
+\end{enumerate}
 
-\vspace{0.5cm}
+\newpage
 \begin{enumerate}
 \setcounter{enumi}{180}
-\item Las palabras de $\Sigma_1$ que contienen dos veces la subcadena 010, asumiendo que sı́ se pueden traslapar. 
+\item Las palabras de $\Sigma_1$ que contienen dos veces la subcadena 010, asumiendo que sí se pueden traslapar. 
 \end{enumerate}
 
 \begin{center}
@@ -1211,12 +1826,36 @@ Simultáneamente, el hilo en $q_4$ absorbe texto basura hasta validar una segund
                 \includegraphics[width=0.9\textwidth]{imgs/181.png}
                 \caption{Diagrama de transiciones y validación No. 181.}
         \end{figure}
-
 \end{minipage}
 \end{center}
+\vspace{0.5cm}
+\begin{enumerate}
+\setcounter{enumi}{181}
+    \item $L=\{w\in\Sigma_3^*:w=a^nb^m,n,m\in\mathbb{N}\}.$
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L114.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+            \begin{tabular}{c|cc}
+            Estado actual & a & b\\
+            \hline
+            $\rightarrow q0$ & $q1$ & $\emptyset$ \\
+            $q1$ & $q1$ & $q2$\\
+            $*q2$ & $\emptyset$ & $q2$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        Siendo $\mathbb{N} = \{1, 2, 3, \dots\}$, la cadena debe tener al menos una a y al menos una b, $i.e:\ a^+b^+$, ademas que el orden importa, por lo que si inicia con b o finaliza con a, la palabra no es aceptada.
+    \end{center}
+\end{enumerate}
 
 \newpage
-\vspace{0.5cm}
 \begin{enumerate}
 \setcounter{enumi}{182}
 \item $L = \{w \in \Sigma_2 : w = (abc)^n, n \in \mathbb{N}\}$.
@@ -1252,8 +1891,15 @@ ciclo. Cualquier desviación del patrón (orden incorrecto o la intrusión de lo
         \end{figure}
 \end{minipage}
 \end{center}
+\vspace{0.4cm}
+\begin{enumerate}
+\setcounter{enumi}{183}
+    \item $L=\{w\in\Sigma_2:w=a^nb^mc^{n+1},n,m\in\mathbb{N}\}.$
+    \begin{center}
+        Este lenguaje no es regular. Debido a que el número de letras c depende directamente del número de letras a ($n$ y $n+1$), es decir, se requiere memoria infinita para su reconocimiento. Por lo tanto, no es posible realizar un AFN, ya que este lenguaje pertenece a la categoría de los Lenguajes Libres de Contexto (requiere un Autómata de Pila).
+    \end{center}
+\end{enumerate}
 
-\vspace{0.5cm}
 \begin{enumerate}
 \setcounter{enumi}{184}
 \item $L = \{w \in \Sigma_3 : w = a^n b^m a^p b^q, m, n, p, q \in \mathbb{N}\}$.
@@ -1293,6 +1939,34 @@ aceptación, se garantiza matemáticamente que los cuatro bloques existan (míni
 \end{center}
 
 \newpage
+\begin{enumerate}
+\setcounter{enumi}{185}
+    \item $L=\{w\in\Sigma_3:w=axabya,x,y\in\Sigma_3^*\}.$
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L118.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+            \begin{tabular}{c|cc}
+            Estado actual & a & b\\
+            \hline
+            $\rightarrow q0$ & $q1$ & $\emptyset$ \\
+            $q1$ & $\{q1, q2\}$ & $q1$\\
+            $q2$ & $\emptyset$ & $q3$\\
+            $q3$ & $\{q3, q4\}$ & $q3$\\
+            $*q4$ & $\emptyset$ & $\emptyset$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        La cadena debe seguir el patrón fijo: comienza con a, sigue cualquier cosa ($x$), luego a, luego b, sigue cualquier cosa ($y$) y termina con a, ya que tenemos la condición de $x,y\in\Sigma_3^*$, esto nos indica que $x$ y $y$, pueden ser $\lambda$ o hasta una palabra distinta.
+    \end{center}
+\end{enumerate}
+
 \vspace{0.5cm}
 \begin{enumerate}
 \setcounter{enumi}{186}
@@ -1326,14 +2000,41 @@ tenta leer una tercera 'a' (formando la secuencia prohibida \textbf{aaa}), la tr
                 \includegraphics[width=0.9\textwidth]{imgs/187.png}
                 \caption{Diagrama de transiciones y validación No. 187.}
         \end{figure}
-
 \end{minipage}
 \end{center}
 
-\vspace{0.5cm}
+\newpage
+\begin{enumerate}
+\setcounter{enumi}{187}
+    \item Las palabras de $\Sigma_1$ tales que el primer carácter y el último son distintos.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN2L120.png}
+            \end{figure}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+            \begin{tabular}{c|ccc}
+            Estado actual & 0 & 1 & 2\\
+            \hline
+            $\rightarrow q0$ & $q1$ & $q2$ & $q3$ \\
+            $q1$ & $q1$ & $\{q1, q4\}$ & $\{q1, q4\}$\\
+            $q2$ & $\{q2, q4\}$ & $q2$ & $\{q2, q4\}$\\
+            $q3$ & $\{q3, q4\}$ & $\{q3, q4\}$ & $q3$\\
+            $*q4$ & $\emptyset$ & $\emptyset$ & $\emptyset$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        Se deben crean tres rutas paralelas dependiendo del primer símbolo recibido, gracias a los AFN esto es capaz de traslapar transiciones entre si.
+    \end{center}
+\end{enumerate}
+
 \begin{enumerate}
 \setcounter{enumi}{188}
-\item Encuentre un autómata finito no determinista con lenguaje $\Sigma=\{0, 1\}$ que identifique las palabras que contienen la cadena 00101 o la cadena 00110. Realice el diagrama de transiciones de la palabra 1001011.
+\item Encuentre un autómata finito no determinista con lenguaje $\Sigma=\{0, 1\}$ que identifique las palabras que contienen la cadena 00101 o la cadena 00110. Realice el diagrama de transiciones de la palabra 1001011.
 \end{enumerate}
 
 \begin{center}
@@ -1397,9 +2098,70 @@ can en el sumidero de aceptación absoluta $q_6$. Cualquier alteración en la se
 \end{minipage}
 \end{center}
 
-\vspace{0.5cm}
 \begin{enumerate}
-\setcounter{enumi}{191}
+\setcounter{enumi}{189}
+    \item Encuentre un autómata finito no determinista con lenguaje $\Sigma = {0, 1}$ que identifique las palabras que contienen la cadena 11010 y la cadena 10100. Realice el diagrama de transiciones de la palabra 01101010100.
+    \begin{center}
+        \begin{minipage}{0.45\textwidth}
+            \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=1.2\textwidth]{imgs/ImgEma/AFN_90.png}
+            \end{figure}
+            \begin{center}
+            \begin{tabular}{c|cc}
+            Estado actual & 0 & 1\\
+            \hline
+            $\rightarrow q0$ & $\{q0\}$ & $\{q0, q1, p1\}$ \\
+            $q1$ & $\emptyset$ & $q2$\\
+            $q2$ & $q3$ & $\emptyset$\\
+            $q3$ & $\emptyset$ & $q4$\\
+            $q4$ & $q5$ & $\emptyset$\\
+            $q5$ & $\{q5\}$ & $\{q5, q6\}$\\
+            $q6$ & $q7$ & $\emptyset$\\
+            $q7$ & $\emptyset$ & $q8$\\
+            $q8$ & $q9$ & $\emptyset$\\
+            $q9$ & $q10$ & $\emptyset$\\
+            $*q10$ & $q10$ & $q10$\\
+            \hline
+            $p1$ & $p2$ & $\emptyset$\\
+            $p2$ & $\emptyset$ & $p3$\\
+            $p3$ & $p4$ & $\emptyset$\\
+            $p4$ & $p5$ & $\emptyset$\\
+            $p5$ & $\{p5\}$ & $\{p5, p6\}$\\
+            $p6$ & $\emptyset$ & $p7$\\
+            $p7$ & $p8$ & $\emptyset$\\
+            $p8$ & $\emptyset$ & $p9$\\
+            $p9$ & $p10$ & $\emptyset$\\
+            $*p10$ & $p10$ & $p10$\\
+            \end{tabular}
+            \end{center}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+        Para el ejercicio se requiere que el autómata rastree dos subcadenas diferentes que pueden aparecer en cualquier orden o incluso traslaparse. Para resolverlo como un AFN, usamos el no determinismo para "adivinar" cuándo empieza cada cadena. La estrategia consiste en crear dos rutas: una que busque 11010 y luego 10100, y otra que busque 10100 y luego 11010.\\
+        A continuación se define el diagrama de transiciones que sigue el autómata para la palabra: $01101010100$
+        \end{minipage}
+        \begin{itemize}
+            \item \textbf{Inicio}: El autómata comienza en el estado inicial $q_0$.
+            \item \textbf{Leer 0}: $\delta(q_0, 0) \to q_0$ (Permanece en el estado inicial).
+            \item \textbf{Leer 1}: $\delta(q_0, 1) \to q_1$ (Se activa la rama para buscar la subcadena \texttt{11010}).
+            \item \textbf{Leer 1}: $\delta(q_1, 1) \to q_2$ (Segunda '1' detectada).
+            \item \textbf{Leer 0}: $\delta(q_2, 0) \to q_3$ ('0' detectado).
+            \item \textbf{Leer 1}: $\delta(q_3, 1) \to q_4$ ('1' detectado).
+            \item \textbf{Leer 0}: $\delta(q_4, 0) \to q_5$ (\textbf{Subcadena 11010 completada}).
+            \item \textbf{Leer 1}: $\delta(q_5, 1) \to q_6$ (Se activa la rama para buscar la subcadena \texttt{10100}).
+            \item \textbf{Leer 0}: $\delta(q_6, 0) \to q_7$ ('0' detectado).
+            \item \textbf{Leer 1}: $\delta(q_7, 1) \to q_8$ ('1' detectado).
+            \item \textbf{Leer 0}: $\delta(q_8, 0) \to q_9$ ('0' detectado).
+            \item \textbf{Leer 0}: $\delta(q_9, 0) \to q_{10}$ (\textbf{Subcadena 10100 completada}).
+            \item \textbf{Estado Final}: La cadena termina en el estado de aceptación $q_{10}$. \textbf{Cadena Aceptada}.
+            \end{itemize}
+    \end{center}
+\end{enumerate}
+
+\vspace{0.3cm}
+\begin{enumerate}
+\setcounter{enumi}{190}
 \item
 En los problemas 191-194, considere el autómata finito no determinista $A = (Q, \Sigma, \delta, A_0, F)$ definido en cada tabla. Encuentre un autómata finito determinista equivalente y realice las siguientes operaciones:
 \end{enumerate}
@@ -1413,13 +2175,13 @@ Este ejercicio es irresoluble
 
 \vspace{0.5cm}   
 \begin{enumerate}
-\setcounter{enumi}{192}
-\item Considere el siguiente autómata no determinista:
+    \setcounter{enumi}{192}
+    \item Considere el siguiente autómata no determinista:
 \end{enumerate}
-
+    
 \begin{center}
     \begin{tabular}{c|cc}
-         & 0 & 1 \\
+        & 0 & 1 \\
         \hline
         $\rightarrow A$ & $\emptyset$ & $\{B, C\}$ \\
         $B$ & $\{A, D\}$ & $\{B, C, D\}$ \\
@@ -1427,16 +2189,15 @@ Este ejercicio es irresoluble
         $*D$ & $\{C\}$ & $\{D\}$ \\
     \end{tabular}
 \end{center}
-
-\vspace{0.3cm}
-Realice las operaciones solicitadas:
-
-\begin{itemize}
-    \item[a)] $Z = \{A\}, \omega = 01101$
-    \item[b)] $Z = \{A, B\}, \omega = 1101$
-    \item[c)] $Z = \{C\}, \omega = 1101$
-\end{itemize}
-\end{enumerate}
+    
+    \vspace{0.3cm}
+    Realice las operaciones solicitadas:
+    
+    \begin{itemize}
+        \item[a)] $Z = \{A\}, \omega = 01101$
+        \item[b)] $Z = \{A, B\}, \omega = 1101$
+        \item[c)] $Z = \{C\}, \omega = 1101$
+    \end{itemize}
 
 \begin{center}
 \begin{minipage}{0.45\textwidth}
@@ -1592,33 +2353,57 @@ Realice las operaciones solicitadas:
 \end{center}
 \end{center}
 
-\section*{Autómatas finitos no deterministas contransiciones $\lambda$}
+\section*{Autómatas finitos no deterministas con transiciones $\lambda$}
 Dibuje el diagrama de transiciones de cada uno de los autómatas que se proporcionan en los reactivos 196-200. Encuentre un autómata finito determinista equivalente a cada uno de los que se presentan en los ejercicios, proporcionando su tabla de transiciones y su diagrama de transiciones. Adicionalmente, halle la información que se pide en cada inciso, tomando en cuenta que $\delta$ es la función de transiciones del autómata original.
+\newpage
+\centering\section*{Expresiones regulares.}
+Indique si las afirmaciones 201-238 son verdaderas (V) o falsas (F).
 
-
-
-\vspace{0.5cm}
+\begin{multicols}{2}
 \begin{enumerate}
-\setcounter{enumi}{162}
-\item* 
+\setcounter{enumi}{200}
+
+\item $(\ V)\ a \in L(a + b)$
+\item $(\ F)\ a \in L(ab)$
+\item $(\ V)\ a \in L(a^* + b^*)$
+\item $(\ V)\ a \in L(ab^*)$
+\item $(\ F)\ aa \in L(a^*b)$
+\item $(\ F)\ ab \in L(a + b)$
+\item $(\ V)\ ab \in L(ab)$
+\item $(\ V)\ ab \in L(a^*b)$
+\item $(\ F)\ ab \in L(b^*b)$
+\item $(\ V)\ ab \in L((a + b)^*)$
+\item $(\ V)\ ab \in L(abc^*)$
+\item $(\ F)\ ab \in L(ab^*c)$
+\item $(\ V)\ ab \in L(ab^*c^*)$
+\item $(\ V)\ ab \in L((a + b + c)^*)$
+\item $(\ F)\ ab \in L((abc)^*)$
+\item $(\ F)\ ab \in L((ab)^*c)$
+\item $(\ F)\ ab \in L(a(bc)^*)$
+\item $(\ V)\ ab \in L(a(b + c)^*)$
+
+\columnbreak
+
+\item $(\ F)\ ab \in L((a + b)^*c)$
+\item $(\ V)\ ab \in L((a + b)^*c^*)$
+\item $(\ F)\ aa \in L(a + b)$
+\item $(\ V)\ aa \in L(a^* + b^*)$
+\item $(\ V)\ aa \in L(a^*b^*)$
+\item $(\ V)\ aa \in L((a + b)^*)$
+\item $(\ V)\ aa \in L(a(a + b)^*)$
+\item $(\ F)\ \lambda \in L(a)$
+\item $(\ V)\ \lambda \in L((a + b)^*)$
+\item $(\ V)\ \lambda \in L((a + b)^* + a)$
+\item $(\ F)\ \lambda \in L(\emptyset)$
+\item $(\ V)\ \lambda \in L(\lambda)$
+\item $(\ V)\ \lambda \in L(\lambda + a)$
+\item $(\ F)\ \lambda \in L(\lambda a)$
+\item $(\ F)\ \lambda \in L(ab^*)$
+\item $(\ V)\ \lambda \in L((ab)^*)$
+\item $(\ V)\ \emptyset \in L(\emptyset)$
+
 \end{enumerate}
-
-\begin{center}
-\begin{minipage}{0.45\textwidth}
-
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
-
-
-\begin{figure}[H]
-                \centering
-                \includegraphics[width=0.9\textwidth]{imgs/185.png}
-                \caption{Diagrama de transiciones y validación No. 185.}
-        \end{figure}
-
-\end{minipage}
-\end{center}
+\end{multicols}
 
 
 
